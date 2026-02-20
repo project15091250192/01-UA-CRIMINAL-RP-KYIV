@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>01 UA CRIMINAL RP KYIV</title>
+
+<meta property="og:title" content="UA CRIMINAL RP KYIV">
+<meta property="og:description" content="Офіційний веб сайт // by G.Versace">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yourdomain.com">
+<meta property="og:image" content="https://yourdomain.com/preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="theme-color" content="#0c1222">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* ======================================
+   ROOT
+====================================== */
+
+:root {
+  --bg: #0c1222;
+  --bg-2: #111936;
+  --bg-card: #131b35;
+  --blue: #1d4ed8;
+  --blue-light: #3b82f6;
+  --blue-glow: rgba(59,130,246,0.3);
+  --yellow: #eab308;
+  --yellow-light: #facc15;
+  --yellow-glow: rgba(234,179,8,0.3);
+  --white: #f1f5f9;
+  --muted: #94a3b8;
+  --border: rgba(255,255,255,0.06);
+  --glass: rgba(255,255,255,0.04);
+}
+
+/* ======================================
+   RESET & BASE
+====================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: var(--bg);
+  color: var(--white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--blue);
+  color: #fff;
+}
+
+/* ======================================
+   LOADER
+====================================== */
+
+#loader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  transition: opacity 0.6s, visibility 0.6s;
+}
+
+#loader.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader-ring {
+  width: 60px;
+  height: 60px;
+  border: 2px solid var(--border);
+  border-top-color: var(--blue-light);
+  border-right-color: var(--yellow);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loader-text {
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  letter-spacing: 6px;
+  color: var(--muted);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ======================================
+   CONTAINER
+====================================== */
+
+.wrap {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+@media (max-width: 768px) {
+  .wrap { padding: 0 24px; }
+}
+
+/* ======================================
+   NAVIGATION
+====================================== */
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9000;
+  transition: 0.4s;
+  background: transparent;
+}
+
+nav.solid {
+  background: rgba(12,18,34,0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.nav-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.nav-logo .ua { color: var(--blue-light); }
+.nav-logo .crp { color: var(--yellow); }
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 50px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  position: relative;
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(90deg, var(--blue-light), var(--yellow));
+  transition: 0.4s;
+}
+
+.nav-menu a:hover {
+  color: var(--white);
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  width: 28px;
+}
+
+.burger span {
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .nav-menu { display: none; }
+  .burger { display: flex; }
+}
+
+/* ======================================
+   HERO
+====================================== */
+
+header {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.4;
+  animation: orbFloat 8s ease-in-out infinite alternate;
+}
+
+.orb-blue {
+  width: 500px;
+  height: 500px;
+  background: var(--blue);
+  top: 10%;
+  left: 15%;
+}
+
+.orb-yellow {
+  width: 400px;
+  height: 400px;
+  background: var(--yellow);
+  bottom: 10%;
+  right: 10%;
+  animation-delay: 2s;
+}
+
+@keyframes orbFloat {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(30px, -30px) scale(1.1); }
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 10;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 8px 24px;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: var(--muted);
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.hero-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(40px, 8vw, 100px);
+  font-weight: 800;
+  line-height: 1.05;
+  margin-bottom: 30px;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.hero-title .blue { color: var(--blue-light); }
+.hero-title .yellow { color: var(--yellow-light); }
+
+.hero-sub {
+  font-size: clamp(16px, 2vw, 22px);
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto 50px;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 16px 50px;
+  background: linear-gradient(135deg, var(--blue), var(--blue-light));
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 8px;
+  transition: 0.4s;
+  border: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px var(--blue-glow);
+}
+
+.btn-outline {
+  display: inline-block;
+  padding: 16px 50px;
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 8px;
+  transition: 0.4s;
+}
+
+.btn-outline:hover {
+  background: var(--yellow);
+  color: var(--bg);
+}
+
+.scroll-line {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, var(--blue-light), transparent);
+  animation: scrollPulse 2s ease infinite;
+  opacity: 0;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* ======================================
+   SECTION HEADER
+====================================== */
+
+.s-head {
+  margin-bottom: 80px;
+}
+
+.s-label {
+  font-size: 12px;
+  letter-spacing: 5px;
+  color: var(--blue-light);
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.s-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(30px, 4vw, 56px);
+  font-weight: 700;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.s-title .yellow { color: var(--yellow-light); }
+.s-title .blue { color: var(--blue-light); }
+
+.s-desc {
+  max-width: 700px;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.8;
+  margin-top: 25px;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* ======================================
+   ABOUT SECTION
+====================================== */
+
+#about {
+  padding: 160px 0;
+  position: relative;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-left {
+  opacity: 0;
+  transform: translateX(-60px);
+}
+
+.about-right {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.stat-row {
+  display: flex;
+  gap: 30px;
+}
+
+.stat-box {
+  flex: 1;
+  background: var(--bg-card);
+  padding: 35px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.4s;
+}
+
+.stat-box:hover {
+  border-color: var(--blue-light);
+  transform: translateY(-5px);
+}
+
+.stat-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--yellow-light);
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; gap: 50px; }
+}
+
+/* ======================================
+   FEATURES
+====================================== */
+
+#features {
+  padding: 160px 0;
+  background: linear-gradient(180deg, var(--bg), var(--bg-2), var(--bg));
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.f-card {
+  background: var(--bg-card);
+  padding: 50px 40px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: 0.5s;
+}
+
+.f-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--yellow));
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.f-card:hover::before {
+  opacity: 1;
+}
+
+.f-card:hover {
+  transform: translateY(-12px);
+  border-color: rgba(59,130,246,0.2);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+}
+
+.f-icon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(250,204,21,0.1));
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  transition: 0.4s;
+}
+
+.f-card:hover .f-icon {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px var(--blue-glow);
+}
+
+.f-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.f-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--white);
+}
+
+.f-card ul {
+  list-style: none;
+}
+
+.f-card li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 14px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.f-card li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--blue-light);
+}
+
+.f-card:nth-child(2) li::before {
+  background: var(--yellow);
+}
+
+.f-card:nth-child(3) li::before {
+  background: linear-gradient(135deg, var(--blue-light), var(--yellow));
+}
+
+@media (max-width: 1000px) {
+  .features-grid { grid-template-columns: 1fr; }
+}
+
+/* ======================================
+   PHILOSOPHY
+====================================== */
+
+#philosophy {
+  padding: 160px 0;
+}
+
+.phil-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.phil-item {
+  background: var(--bg-card);
+  padding: 45px 30px;
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid var(--border);
+  opacity: 0;
+  transform: scale(0.9);
+  transition: 0.5s;
+}
+
+.phil-item:hover {
+  border-color: var(--yellow);
+  transform: scale(1.03);
+}
+
+.phil-icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phil-icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.phil-item h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: var(--yellow-light);
+}
+
+.phil-item p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .phil-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 500px) {
+  .phil-grid { grid-template-columns: 1fr; }
+}
+
+/* ======================================
+   TEAM
+====================================== */
+
+#team {
+  padding: 160px 0;
+  background: linear-gradient(180deg, var(--bg), var(--bg-2), var(--bg));
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.t-card {
+  background: var(--bg-card);
+  padding: 50px 35px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: 0.5s;
+}
+
+.t-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(59,130,246,0.2);
+}
+
+.t-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-family: 'Syne', sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.03);
+  line-height: 1;
+}
+
+.t-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.t-avatar svg {
+  width: 28px;
+  height: 28px;
+}
+
+.t-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--white);
+}
+
+.t-role {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--blue-light);
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.t-card p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* FOUNDER CARD (G.Versace) */
+.t-founder {
+  border-color: rgba(234,179,8,0.15);
+  background: linear-gradient(160deg, #131b35, #1a1a10);
+}
+
+.t-founder:hover {
+  border-color: rgba(234,179,8,0.3);
+  box-shadow: 0 25px 60px rgba(234,179,8,0.1);
+}
+
+.t-founder .t-role {
+  color: var(--yellow);
+}
+
+.t-founder .t-avatar {
+  background: linear-gradient(135deg, rgba(234,179,8,0.2), rgba(234,179,8,0.05));
+}
+
+@media (max-width: 1100px) {
+  .team-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+  .team-grid { grid-template-columns: 1fr; }
+}
+
+/* ======================================
+   CONCEPT
+====================================== */
+
+#concept {
+  padding: 160px 0;
+}
+
+.concept-block {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.concept-text {
+  font-size: 18px;
+  line-height: 2;
+  color: var(--muted);
+  margin-bottom: 50px;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.concept-line {
+  width: 1px;
+  height: 80px;
+  background: linear-gradient(to bottom, var(--blue-light), var(--yellow), transparent);
+  margin: 0 auto 50px;
+  opacity: 0;
+}
+
+/* ======================================
+   CTA
+====================================== */
+
+#cta {
+  padding: 200px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.15;
+}
+
+.cta-glow-blue {
+  background: var(--blue);
+  left: -100px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.cta-glow-yellow {
+  background: var(--yellow);
+  right: -100px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#cta h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(30px, 5vw, 60px);
+  font-weight: 700;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+#cta h2 .blue { color: var(--blue-light); }
+#cta h2 .yellow { color: var(--yellow-light); }
+
+#cta .cta-sub {
+  color: var(--muted);
+  font-size: 18px;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+#cta .btn-primary {
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* ======================================
+   FOOTER
+====================================== */
+
+footer {
+  padding: 50px 0;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-copy {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.footer-brand {
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: #ef4444;
+  text-shadow: 0 0 20px rgba(239,68,68,0.3);
+}
+
+@media (max-width: 600px) {
+  .footer-inner {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* ======================================
+   REVEAL ANIMATIONS
+====================================== */
+
+.reveal-up {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.reveal-left {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.reveal-scale {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-ring"></div>
+  <div class="loader-text">UA CRIMINAL RP KYIV</div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="wrap nav-row">
+    <div class="nav-logo"><span class="ua">UA</span> <span class="crp">CRIMINAL</span></div>
+    <ul class="nav-menu">
+      <li><a href="#about">Про нас</a></li>
+      <li><a href="#features">Можливості</a></li>
+      <li><a href="#team">Команда</a></li>
+      <li><a href="#concept">Концепція</a></li>
+      <li><a href="#cta">Discord</a></li>
+    </ul>
+    <div class="burger" id="burger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header>
+  <div class="hero-bg">
+    <div class="hero-orb orb-blue"></div>
+    <div class="hero-orb orb-yellow"></div>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-badge anim" data-anim="up" data-delay="200">PREMIUM ROLE PLAY SERVER</div>
+    <h1 class="hero-title anim" data-anim="up" data-delay="500">
+      <span class="blue">UA</span> CRIMINAL<br><span class="yellow">RP KYIV</span>
+    </h1>
+    <p class="hero-sub anim" data-anim="up" data-delay="800">
+      Сучасний український Role Play сервер нового покоління.
+      Живий Київ, реальна економіка, справжні історії.
+    </p>
+    <div class="hero-actions anim" data-anim="up" data-delay="1100">
+      <a href="#cta" class="btn-primary">DISCORD SERVER</a>
+      <a href="#about" class="btn-outline">ДІЗНАТИСЬ БІЛЬШЕ</a>
+    </div>
+  </div>
+  <div class="scroll-line anim" data-anim="up" data-delay="1800"></div>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+
+      <div class="about-left anim" data-anim="left">
+        <div class="s-head">
+          <div class="s-label anim" data-anim="up">Про проєкт</div>
+          <h2 class="s-title anim" data-anim="up">
+            <span class="yellow">UA CRIMINAL</span> KYIV
+          </h2>
+          <p class="s-desc anim" data-anim="up">
+            Потужно, круто, стильно — і це все є у нашому проєкті.
+            Це не просто RP-сервер. Це живий Київ, де кожен вибір
+            має наслідки. Ти можеш почати з нуля — без грошей,
+            без зв'язків, лише з бажанням піднятися.
+          </p>
+        </div>
+      </div>
+
+      <div class="about-right">
+        <div class="stat-row">
+          <div class="stat-box anim" data-anim="up" data-delay="100">
+            <div class="stat-num" data-count="24">0</div>
+            <div class="stat-label">Години онлайн</div>
+          </div>
+          <div class="stat-box anim" data-anim="up" data-delay="250">
+            <div class="stat-num" data-count="10">0</div>
+            <div class="stat-label">Фракцій</div>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-box anim" data-anim="up" data-delay="400">
+            <div class="stat-num" data-count="50">0</div>
+            <div class="stat-label">Бізнесів</div>
+          </div>
+          <div class="stat-box anim" data-anim="up" data-delay="550">
+            <div class="stat-num" data-count="100">0</div>
+            <div class="stat-label">Гравців</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="wrap">
+    <div class="s-head" style="text-align:center;">
+      <div class="s-label anim" data-anim="up">Можливості</div>
+      <h2 class="s-title anim" data-anim="up">
+        Що пропонує <span class="blue">UA CRIMINAL</span>
+      </h2>
+    </div>
+
+    <div class="features-grid">
+
+      <div class="f-card anim" data-anim="up" data-delay="0">
+        <div class="f-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </div>
+        <h3>Живий Київ</h3>
+        <ul>
+          <li>Сучасна деталізована карта</li>
+          <li>Динамічна економіка</li>
+          <li>Регулярні ігрові події</li>
+          <li>Реалістичний транспорт</li>
+        </ul>
+      </div>
+
+      <div class="f-card anim" data-anim="up" data-delay="150">
+        <div class="f-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h3>Свобода розвитку</h3>
+        <ul>
+          <li>Бізнес та підприємництво</li>
+          <li>Державні структури</li>
+          <li>Кримінальний шлях</li>
+          <li>Захоплення територій</li>
+        </ul>
+      </div>
+
+      <div class="f-card anim" data-anim="up" data-delay="300">
+        <div class="f-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <h3>Якість Role Play</h3>
+        <ul>
+          <li>Високі стандарти RP</li>
+          <li>Активна адміністрація</li>
+          <li>Без дитячого хаосу</li>
+          <li>Справжні історії</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section id="philosophy">
+  <div class="wrap">
+    <div class="s-head" style="text-align:center;">
+      <div class="s-label anim" data-anim="up">Філософія</div>
+      <h2 class="s-title anim" data-anim="up">
+        Наші <span class="yellow">цінності</span>
+      </h2>
+    </div>
+
+    <div class="phil-grid">
+
+      <div class="phil-item anim" data-anim="scale" data-delay="0">
+        <div class="phil-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 6v6l4 2"/>
+          </svg>
+        </div>
+        <h4>Атмосфера</h4>
+        <p>Сучасний Київ з неповторною атмосферою</p>
+      </div>
+
+      <div class="phil-item anim" data-anim="scale" data-delay="150">
+        <div class="phil-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/>
+          </svg>
+        </div>
+        <h4>Спільнота</h4>
+        <p>Разом будуємо та розвиваємо проєкт</p>
+      </div>
+
+      <div class="phil-item anim" data-anim="scale" data-delay="300">
+        <div class="phil-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+        </div>
+        <h4>Якість</h4>
+        <p>Кожна деталь має значення</p>
+      </div>
+
+      <div class="phil-item anim" data-anim="scale" data-delay="450">
+        <div class="phil-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 01-3.46 0"/>
+          </svg>
+        </div>
+        <h4>Інновації</h4>
+        <p>Нові можливості та оновлення</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="wrap">
+    <div class="s-head" style="text-align:center;">
+      <div class="s-label anim" data-anim="up">Команда</div>
+      <h2 class="s-title anim" data-anim="up">
+        Хто <span class="blue">стоїть</span> за проєктом
+      </h2>
+    </div>
+
+    <div class="team-grid">
+
+      <!-- G.Versace -->
+      <div class="t-card t-founder anim" data-anim="up" data-delay="0">
+        <span class="t-badge">01</span>
+        <div class="t-avatar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h3>G.Versace</h3>
+        <div class="t-role">BUG FIXER</div>
+        <p>Автор та розробник офіційного веб-сайту проєкту.</p>
+      </div>
+
+      <!-- Oleg -->
+      <div class="t-card anim" data-anim="up" data-delay="150">
+        <span class="t-badge">02</span>
+        <div class="t-avatar" style="background:linear-gradient(135deg,rgba(59,130,246,0.15),rgba(59,130,246,0.05));border-radius:16px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+        </div>
+        <h3>Oleg_Feniks</h3>
+        <div class="t-role">CO-FOUNDER</div>
+        <p>Засновник проєкту та творець карти гри. Архітектор ігрового всесвіту.</p>
+      </div>
+
+      <!-- Maksim -->
+      <div class="t-card anim" data-anim="up" data-delay="300">
+        <span class="t-badge">03</span>
+        <div class="t-avatar" style="background:linear-gradient(135deg,rgba(59,130,246,0.15),rgba(59,130,246,0.05));border-radius:16px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+            <path d="M16 3.13a4 4 0 010 7.75"/>
+          </svg>
+        </div>
+        <h3>Maksim_Kotov</h3>
+        <div class="t-role">DEPUTY FOUNDER</div>
+        <p>Заступник засновника проєкту. Допомагає з розробкою карти та стратегічним розвитком.</p>
+      </div>
+
+      <!-- YanTar -->
+      <div class="t-card anim" data-anim="up" data-delay="450">
+        <span class="t-badge">04</span>
+        <div class="t-avatar" style="background:linear-gradient(135deg,rgba(59,130,246,0.15),rgba(59,130,246,0.05));border-radius:16px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 18 22 12 16 6"/>
+            <polyline points="8 6 2 12 8 18"/>
+            <line x1="14" y1="4" x2="10" y2="20"/>
+          </svg>
+        </div>
+        <h3>YanTar</h3>
+        <div class="t-role">LEAD DEVELOPER</div>
+        <p>Спеціальний адміністратор, головний модератор Discord та головний програміст команди.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONCEPT -->
+<section id="concept">
+  <div class="wrap">
+    <div class="concept-block">
+      <div class="s-head" style="text-align:center;">
+        <div class="s-label anim" data-anim="up">Концепція</div>
+        <h2 class="s-title anim" data-anim="up">
+          <span class="yellow">Київ,</span> який пишеш <span class="blue">ти</span>
+        </h2>
+      </div>
+      <div class="concept-line anim" data-anim="up"></div>
+      <p class="concept-text anim" data-anim="up">
+        Це не чудо і не фейк. Це реально топовий проєкт на основі RP.
+        Ми йдемо крок за кроком, не пропускаємо жодної деталі.
+        Ключова фраза — спробуй, а потім вирішуй.
+        Чи сервер гідний для гри, чи ні.
+        Давайте розвивати гру разом.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-glow cta-glow-blue"></div>
+  <div class="cta-glow cta-glow-yellow"></div>
+  <div class="wrap">
+    <h2 class="anim" data-anim="up">
+      Стань частиною <span class="blue">UA</span> <span class="yellow">CRIMINAL</span>
+    </h2>
+    <p class="cta-sub anim" data-anim="up" data-delay="200">
+      Зв'яжись з командою через Discord та розпочни свою історію
+    </p>
+    <a href="#" class="btn-primary anim" data-anim="up" data-delay="400">DISCORD SERVER</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-copy">Офіційний веб сайт UA CRIMINAL RP KYIV</div>
+      <div class="footer-brand">by G.Versace</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ======================================
+     JAVASCRIPT
+====================================== -->
+<script>
+(function(){
+
+  /* ========== LOADER ========== */
+  window.addEventListener('load', function(){
+    setTimeout(function(){
+      document.getElementById('loader').classList.add('hide');
+      startHero();
+    }, 1200);
+  });
+
+  /* ========== HERO SEQUENCE ========== */
+  function startHero(){
+    var items = document.querySelectorAll('header .anim');
+    items.forEach(function(el){
+      var delay = parseInt(el.dataset.delay) || 0;
+      setTimeout(function(){
+        el.style.transition = 'opacity 1s cubic-bezier(0.22,1,0.36,1), transform 1s cubic-bezier(0.22,1,0.36,1)';
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+      }, delay);
+    });
+  }
+
+  /* ========== NAV SCROLL ========== */
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 80){
+      nav.classList.add('solid');
+    } else {
+      nav.classList.remove('solid');
+    }
+  });
+
+  /* ========== SCROLL REVEAL ========== */
+  var animEls = document.querySelectorAll('section .anim, #cta .anim');
+
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+
+      var el = entry.target;
+      var delay = parseInt(el.dataset.delay) || 0;
+      var type = el.dataset.anim || 'up';
+
+      setTimeout(function(){
+        var dur = '0.9s';
+        var ease = 'cubic-bezier(0.22,1,0.36,1)';
+
+        if(type === 'up'){
+          el.style.transition = 'opacity '+dur+' '+ease+', transform '+dur+' '+ease;
+          el.classList.add('reveal-up');
+        }
+        if(type === 'left'){
+          el.style.transition = 'opacity '+dur+' '+ease+', transform '+dur+' '+ease;
+          el.classList.add('reveal-left');
+        }
+        if(type === 'scale'){
+          el.style.transition = 'opacity '+dur+' '+ease+', transform '+dur+' '+ease;
+          el.classList.add('reveal-scale');
+        }
+      }, delay);
+
+      obs.unobserve(el);
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -60px 0px'
+  });
+
+  animEls.forEach(function(el){
+    obs.observe(el);
+  });
+
+  /* ========== COUNTER ANIMATION ========== */
+  var counters = document.querySelectorAll('.stat-num');
+  var counterDone = false;
+
+  var counterObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting && !counterDone){
+        counterDone = true;
+        counters.forEach(function(c){
+          var target = parseInt(c.dataset.count);
+          var current = 0;
+          var step = Math.ceil(target / 40);
+          var timer = setInterval(function(){
+            current += step;
+            if(current >= target){
+              current = target;
+              clearInterval(timer);
+            }
+            c.textContent = current + '+';
+          }, 40);
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+
+  if(counters.length > 0){
+    counterObs.observe(counters[0]);
+  }
+
+  /* ========== CONCEPT LINE ANIMATION ========== */
+  var cLine = document.querySelector('.concept-line');
+  if(cLine){
+    var cObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          cLine.style.transition = 'opacity 1.2s ease';
+          cLine.style.opacity = '1';
+          cObs.unobserve(cLine);
+        }
+      });
+    }, { threshold: 0.5 });
+    cObs.observe(cLine);
+  }
+
+  /* ========== CARD 3D TILT ========== */
+  var cards = document.querySelectorAll('.f-card, .t-card');
+  cards.forEach(function(card){
+    card.addEventListener('mousemove', function(e){
+      var rect = card.getBoundingClientRect();
+      var x = (e.clientX - rect.left) / rect.width;
+      var y = (e.clientY - rect.top) / rect.height;
+      var rotX = (y - 0.5) * 6;
+      var rotY = (x - 0.5) * -6;
+      card.style.transform = 'perspective(800px) rotateX('+rotX+'deg) rotateY('+rotY+'deg) translateY(-12px)';
+      card.style.transition = 'transform 0.1s ease';
+    });
+
+    card.addEventListener('mouseleave', function(){
+      card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) translateY(0)';
+      card.style.transition = 'transform 0.5s ease';
+    });
+  });
+
+  /* ========== FOUNDER CARD GLOW ========== */
+  var founder = document.querySelector('.t-founder');
+  if(founder){
+    founder.addEventListener('mousemove', function(e){
+      var rect = founder.getBoundingClientRect();
+      var x = e.clientX - rect.left;
+      var y = e.clientY - rect.top;
+      founder.style.background =
+        'radial-gradient(circle at '+x+'px '+y+'px, rgba(234,179,8,0.12), transparent 50%), '+
+        'linear-gradient(160deg, #131b35, #1a1a10)';
+    });
+
+    founder.addEventListener('mouseleave', function(){
+      founder.style.background = 'linear-gradient(160deg, #131b35, #1a1a10)';
+    });
+  }
+
+  /* ========== PHILOSOPHY HOVER EFFECTS ========== */
+  var phils = document.querySelectorAll('.phil-item');
+  phils.forEach(function(p){
+    p.addEventListener('mouseenter', function(){
+      var svg = p.querySelector('svg');
+      if(svg){
+        svg.style.transition = 'transform 0.4s ease';
+        svg.style.transform = 'scale(1.2) rotate(5deg)';
+      }
+    });
+    p.addEventListener('mouseleave', function(){
+      var svg = p.querySelector('svg');
+      if(svg){
+        svg.style.transform = 'scale(1) rotate(0)';
+      }
+    });
+  });
+
+  /* ========== PARALLAX ORBS ========== */
+  var orbBlue = document.querySelector('.orb-blue');
+  var orbYellow = document.querySelector('.orb-yellow');
+  var rafBusy = false;
+
+  window.addEventListener('scroll', function(){
+    if(!rafBusy){
+      window.requestAnimationFrame(function(){
+        var s = window.scrollY;
+        if(s < window.innerHeight){
+          if(orbBlue) orbBlue.style.transform = 'translate('+s*0.05+'px, '+s*-0.08+'px)';
+          if(orbYellow) orbYellow.style.transform = 'translate('+s*-0.05+'px, '+s*0.06+'px)';
+        }
+        rafBusy = false;
+      });
+      rafBusy = true;
+    }
+  });
+
+  /* ========== SMOOTH ANCHOR SCROLL ========== */
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      var target = document.querySelector(this.getAttribute('href'));
+      if(target){
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  /* ========== CTA BUTTON RIPPLE ========== */
+  var ctaBtn = document.querySelector('#cta .btn-primary');
+  if(ctaBtn){
+    ctaBtn.addEventListener('click', function(e){
+      var ripple = document.createElement('span');
+      var rect = ctaBtn.getBoundingClientRect();
+      var size = Math.max(rect.width, rect.height) * 2;
+      ripple.style.cssText =
+        'position:absolute;border-radius:50%;background:rgba(255,255,255,0.25);'+
+        'width:'+size+'px;height:'+size+'px;'+
+        'left:'+(e.clientX-rect.left-size/2)+'px;'+
+        'top:'+(e.clientY-rect.top-size/2)+'px;'+
+        'transform:scale(0);animation:ripple 0.6s ease;pointer-events:none;';
+      ctaBtn.style.position = 'relative';
+      ctaBtn.style.overflow = 'hidden';
+      ctaBtn.appendChild(ripple);
+      setTimeout(function(){ ripple.remove(); }, 600);
+    });
+
+    var rs = document.createElement('style');
+    rs.textContent = '@keyframes ripple{to{transform:scale(1);opacity:0;}}';
+    document.head.appendChild(rs);
+  }
+
+})();
+</script>
+
+</body>
+</html>
